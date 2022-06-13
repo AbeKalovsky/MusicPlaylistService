@@ -46,13 +46,6 @@ songCount : Integer
 tags : Set<String>
 songList : List<AlbumTrack>
 }
-
-class AlbumTrackNotFoundException()
-
-class InvalidAttributeValueException()
-
-class PlaylistNotFoundException()
-
 Playlist --> AlbumTrack
 AddSongToPlaylistActivity --> AlbumTrackDao
 CreatePlaylistActivity --> PlaylistDao
@@ -60,5 +53,34 @@ AddSongToPlaylistActivity --> PlaylistDao
 GetPlaylistActivity --> PlaylistDao
 GetPlaylistSongsActivity --> PlaylistDao
 UpdatePlaylistActivity --> PlaylistDao
+
+
+
+newpage
+
+class RuntimeException
+
+class AlbumTrackNotFoundException()
+
+
+class PlaylistNotFoundException()
+
+
+class InvalidAttributeException()
+
+
+class InvalidAttributeValueException()
+
+
+class InvalidAttributeChangeException()
+
+newpage
+
+AlbumTrackNotFoundException <-- RuntimeException
+PlaylistNotFoundException <-- RuntimeException
+RuntimeException <|-- InvalidAttributeException
+InvalidAttributeException <|-- InvalidAttributeChangeException
+InvalidAttributeException <|-- InvalidAttributeValueException
+
 
 @enduml
