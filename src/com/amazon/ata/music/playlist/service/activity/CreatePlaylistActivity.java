@@ -15,6 +15,7 @@ import com.amazonaws.services.lambda.runtime.RequestHandler;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -36,6 +37,7 @@ public class CreatePlaylistActivity implements RequestHandler<CreatePlaylistRequ
      *
      * @param playlistDao PlaylistDao to access the playlists table.
      */
+    @Inject
     public CreatePlaylistActivity(PlaylistDao playlistDao) {
         this.playlistDao = playlistDao;
     }
@@ -64,8 +66,8 @@ public class CreatePlaylistActivity implements RequestHandler<CreatePlaylistRequ
         if (createPlaylistRequest.getTags().size() == 0) {
            createPlaylistRequest.setTags(null);
         }
-        if (MusicPlaylistServiceUtils.isValidString(createPlaylistRequest.getName()) ||
-                MusicPlaylistServiceUtils.isValidString(createPlaylistRequest.getCustomerId())) {
+        if (!MusicPlaylistServiceUtils.isValidString(createPlaylistRequest.getName()) ||
+                !MusicPlaylistServiceUtils.isValidString(createPlaylistRequest.getCustomerId())) {
             throw new InvalidAttributeValueException("name or customer id is invalid");
         }
 

@@ -15,7 +15,7 @@ import java.util.Set;
  */
 @DynamoDBTable(tableName = "playlists")
 public class Playlist {
-    @DynamoDBHashKey
+
     private String id;
     private String name;
     private String customerId;
@@ -32,7 +32,7 @@ public class Playlist {
         this.name = name;
     }
 
-    @DynamoDBAttribute(attributeName = "CustomerId")
+    @DynamoDBAttribute(attributeName = "customerId")
     public String getCustomerId() {
         return customerId;
     }
@@ -41,7 +41,7 @@ public class Playlist {
         this.customerId = customerId;
     }
 
-    @DynamoDBAttribute(attributeName = "SongCount")
+    @DynamoDBAttribute(attributeName = "songCount")
     public Integer getSongCount() {
         return songCount;
     }
@@ -50,7 +50,7 @@ public class Playlist {
         this.songCount = songCount;
     }
 
-    @DynamoDBAttribute(attributeName = "Tags")
+    @DynamoDBAttribute(attributeName = "tags")
     public Set<String> getTags() {
         return tags;
     }
