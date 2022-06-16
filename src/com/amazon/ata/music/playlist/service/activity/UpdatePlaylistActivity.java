@@ -71,8 +71,8 @@ public class UpdatePlaylistActivity implements RequestHandler<UpdatePlaylistRequ
             throw new PlaylistNotFoundException("Customer Id does not match any ids in our database");
         }
 
-        if (playlist.getCustomerId() != updatePlaylistRequest.getCustomerId()) {
-            throw new InvalidAttributeChangeException("Customer Id does not match our amy id in our database");
+        if (!playlist.getCustomerId().equals(updatePlaylistRequest.getCustomerId()) ) {
+            throw new InvalidAttributeChangeException("Customer Id does not match any id in our database");
         }
 
         playlist.setName(updatePlaylistRequest.getName());

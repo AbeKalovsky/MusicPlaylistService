@@ -7,6 +7,7 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTypeConverted;
 
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
@@ -21,7 +22,7 @@ public class Playlist {
     private String customerId;
     private Integer songCount;
     private Set<String> tags;
-    private List<AlbumTrack> songList;
+    private LinkedList<AlbumTrack> songList;
 
     @DynamoDBAttribute(attributeName = "name")
     public String getName() {
@@ -32,7 +33,7 @@ public class Playlist {
         this.name = name;
     }
 
-    @DynamoDBAttribute(attributeName = "customerId")
+    @DynamoDBAttribute(attributeName = "CustomerId")
     public String getCustomerId() {
         return customerId;
     }
@@ -41,7 +42,7 @@ public class Playlist {
         this.customerId = customerId;
     }
 
-    @DynamoDBAttribute(attributeName = "songCount")
+    @DynamoDBAttribute(attributeName = "SongCount")
     public Integer getSongCount() {
         return songCount;
     }
@@ -50,7 +51,7 @@ public class Playlist {
         this.songCount = songCount;
     }
 
-    @DynamoDBAttribute(attributeName = "tags")
+    @DynamoDBAttribute(attributeName = "Tags")
     public Set<String> getTags() {
         return tags;
     }
@@ -71,11 +72,11 @@ public class Playlist {
     // PARTICIPANTS: You do not need to modify the songList getters/setters or annotations
     @DynamoDBTypeConverted(converter = AlbumTrackLinkedListConverter.class)
     @DynamoDBAttribute(attributeName = "songList")
-    public List<AlbumTrack> getSongList() {
+    public LinkedList<AlbumTrack> getSongList() {
         return songList;
     }
 
-    public void setSongList(List<AlbumTrack> songList) {
+    public void setSongList(LinkedList<AlbumTrack> songList) {
         this.songList = songList;
     }
 }
