@@ -1,9 +1,13 @@
 package com.amazon.ata.music.playlist.service.exceptions;
 
+import com.amazon.ata.music.playlist.service.models.requests.UpdatePlaylistRequest;
+
+import javax.naming.directory.InvalidAttributesException;
+
 /**
  * Exception to throw when a provided value has invalid attribute values.
  */
-public class InvalidAttributeValueException extends RuntimeException {
+public class InvalidAttributeValueException extends InvalidAttributeException {
 
     private static final long serialVersionUID = 8007453316698012851L;
 
@@ -38,4 +42,5 @@ public class InvalidAttributeValueException extends RuntimeException {
     public InvalidAttributeValueException(String message, Throwable cause) {
         super(message, cause);
     }
+
 }

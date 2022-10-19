@@ -1,5 +1,7 @@
 package com.amazon.ata.music.playlist.service.exceptions;
 
+import com.amazon.ata.music.playlist.service.models.requests.UpdatePlaylistRequest;
+
 /**
  * Exception to throw when a given playlist ID is not found in the database.
  */
@@ -37,5 +39,8 @@ public class PlaylistNotFoundException extends RuntimeException {
      */
     public PlaylistNotFoundException(String message, Throwable cause) {
         super(message, cause);
+    }
+
+    public PlaylistNotFoundException(String message, UpdatePlaylistRequest updatePlaylistRequest) {
     }
 }

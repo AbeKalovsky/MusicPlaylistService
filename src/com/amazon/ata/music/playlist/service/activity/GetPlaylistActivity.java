@@ -1,5 +1,6 @@
 package com.amazon.ata.music.playlist.service.activity;
 
+import com.amazon.ata.music.playlist.service.exceptions.PlaylistNotFoundException;
 import com.amazon.ata.music.playlist.service.models.requests.GetPlaylistRequest;
 import com.amazon.ata.music.playlist.service.models.results.GetPlaylistResult;
 import com.amazon.ata.music.playlist.service.models.PlaylistModel;
@@ -11,6 +12,8 @@ import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import javax.inject.Inject;
 
 /**
  * Implementation of the GetPlaylistActivity for the MusicPlaylistService's GetPlaylist API.
@@ -26,6 +29,7 @@ public class GetPlaylistActivity implements RequestHandler<GetPlaylistRequest, G
      *
      * @param playlistDao PlaylistDao to access the playlist table.
      */
+    @Inject
     public GetPlaylistActivity(PlaylistDao playlistDao) {
         this.playlistDao = playlistDao;
     }
@@ -44,9 +48,14 @@ public class GetPlaylistActivity implements RequestHandler<GetPlaylistRequest, G
     public GetPlaylistResult handleRequest(final GetPlaylistRequest getPlaylistRequest, Context context) {
         log.info("Received GetPlaylistRequest {}", getPlaylistRequest);
         String requestedId = getPlaylistRequest.getId();
-        Playlist playlist = playlistDao.getPlaylist(requestedId);
+        Playlist playlist = new Playlist();
         PlaylistModel playlistModel = new ModelConverter().toPlaylistModel(playlist);
 
+        try {
+            playlist = playlistDao.getPlaylist(requestedId);
+        } catch(PlaylistNotFoundException e) {
+            throw new PlaylistNotFoundException(e.getMessage());
+        }
         return GetPlaylistResult.builder()
                 .withPlaylist(playlistModel)
                 .build();
