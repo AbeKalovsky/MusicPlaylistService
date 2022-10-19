@@ -6,9 +6,10 @@ This design document describes the Amazon Music Playlist Service, a new AWS serv
 
 This initial iteration will provide the minimum lovable product (MLP) defined by our product team including creating, retrieving, and updating a playlist, as well as adding to and retrieving a saved playlist’s list of songs.
 
-Project Mastery Tasks
-Under each mastery task I have linked to parts of the project that are my code.
-Mastery Task 1: Finish What We Started
+## Project Mastery Tasks
+#### Under each mastery task I have linked to parts of the project that are my code.
+## [Mastery Task 1: Finish What We Started](tasks/project-mastery-tasks/MasteryTask01.md)
+
 My Contributions:
 
 Class Diagram
