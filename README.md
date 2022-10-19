@@ -34,7 +34,7 @@ My Contributions:
 - [InvalidAttributeValueException](https://github.com/AbeKalovsky/music_playlist_service/commit/c638d6daabe0e4c63d8e2f4f65d0d3788389ea95#diff-2ac9370008753a924692595822a7379e899cbd548c546db491db2469ccbb1608)
 
 
-## [Mastery Task 3: Implement the Dagger framework]
+## [Mastery Task 3: Implement the Dagger framework](tasks/project-mastery-tasks/MasteryTask03.md)
 
 
 My Contributions:
@@ -67,7 +67,7 @@ My Contributions:
 
 - [UpdatePlaylistActivityProvider](https://github.com/AbeKalovsky/music_playlist_service/commit/b984fef33ea77e67224ff2c87c951cdd8ca80a88#diff-8ef03ce0f23ef37e3d73eecebe1beaaa18ed707964e6494cee3f7b87a916795f)
 
-## [Mastery Task 4: Without Music, Life Would B-flat]
+## [Mastery Task 4: Without Music, Life Would B-flat](tasks/project-mastery-tasks/MasteryTask04.md)
 My Contributions:
 
 - [CreatePlaylistActivity](https://github.com/AbeKalovsky/music_playlist_service/commit/68539e0010f5438dc0599110ef5e94f6a53645f1#diff-a7937bf4c20dcfcbbc187a2dcdf946b229e8f2e7e3534b3ea2ac514cef092115)
@@ -76,7 +76,7 @@ My Contributions:
 
 - [AlbumTrack](https://github.com/AbeKalovsky/music_playlist_service/commit/68539e0010f5438dc0599110ef5e94f6a53645f1#diff-8a1da4c6a4aa14903edfea8fc9e0555e824299cfedc7e3b4a43b9a0e3ac3f361)
 
-## [Mastery Task 5: Zoom, Enhance]
+## [Mastery Task 5: Zoom, Enhance](tasks/project-mastery-tasks/MasteryTask05.md)
 My Contributions:
 
 - [AddSongToPlaylistActivity](https://github.com/AbeKalovsky/music_playlist_service/commit/68539e0010f5438dc0599110ef5e94f6a53645f1#diff-66b360d37c60653172eca2824941919519a27587b974b9fe3461d25694afbac1)
@@ -85,7 +85,7 @@ My Contributions:
 
 - [Playlist](https://github.com/AbeKalovsky/music_playlist_service/commit/68539e0010f5438dc0599110ef5e94f6a53645f1#diff-413ee09180108ae1dae00e691dec611c13b7e0c04d84a9be558175b2578ff2e8)
 
-## [Mastery Task 6: Create an API Gateway]
+## [Mastery Task 6: Create an API Gateway](tasks/project-mastery-tasks/MasteryTask06.md)
 
 My Contributions:
 
